@@ -62,7 +62,7 @@ Clone the repository
 
 Switch to the repository folder manually or using
 
-    cd laravel-support-ticket-system
+    cd Laravel_Support_Ticket_System
 
 Copy the `env.example` file and rename it to `.env`. After that make the required configuration changes in the `.env` file
     
