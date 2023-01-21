@@ -17,7 +17,7 @@ class TicketSeeder extends Seeder
      */
     public function run()
     {
-        Ticket::factory(45)->create()->each(function ($ticket) {
+        Ticket::factory(45)->createQuietly()->each(function ($ticket) {
             $ticket->labels()->attach(Label::all()->random(3) ?? Label::factory()->create(3));
             $ticket->categories()->attach(Category::all()->random(3) ?? Category::factory()->create(3));
         });
