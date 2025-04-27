@@ -1,5 +1,5 @@
 @extends('layouts.app', [
-    'title' => __('Categories'),
+    'title' => __('Catégories'),
 ])
 
 @section('content')
@@ -7,7 +7,7 @@
 
     @can ('create', \App\Models\Category::class)
         <a href="{{ route('categories.create') }}" class="btn btn-primary mb-3">
-            {{ __('Create a category') }}
+            {{ __('Créer une catégorie') }}
         </a>
     @endcan
 
@@ -15,8 +15,8 @@
         <thead class="thead-light">
             <tr>
                 <th>{{ __('ID') }}</th>
-                <th>{{ __('Name') }}</th>
-                <th>{{ __('Created on') }}</th>
+                <th>{{ __('Nom') }}</th>
+                <th>{{ __('Créée') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -40,7 +40,7 @@
                 </tr>
             @empty
                 <td colspan="3">
-                    {{ __('No categories have been created yet.') }}
+                    {{ __('Aucune catégorie existante.') }}
                 </td>
             @endforelse
         </tbody>

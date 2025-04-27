@@ -1,5 +1,5 @@
 @extends('layouts.app', [
-    'title' => __('Edit Comment') . ' - ' . $comment->id,
+    'title' => __('Modifier commentaire') . ' - ' . $comment->id,
     'columnSize' => 'col-lg-8',
 ])
 
@@ -16,7 +16,7 @@
                     minlength="10" maxlength="10000" required>{{ old('message', $comment->message) }}</textarea>
         </div>
 
-        <button class="btn btn-primary btn-block" type="submit">{{ __('Save') }}</button>
+        <button class="btn btn-primary btn-block" type="submit">{{ __('Sauvegarder') }}</button>
     </form>
 
     @can ('delete', $comment)

@@ -1,6 +1,6 @@
 @props([
-    'header' => __('Confirm Delete'),
-    'btnLabel' => __('Delete'),
+    'header' => __('Confirmer la suppression'),
+    'btnLabel' => __('Supprimer'),
     'btnColor' => 'danger',
     'resourceName' => 'resource',
     'modalId' => 'confirmDelete',
@@ -20,13 +20,13 @@
             </div>
             <div class="modal-body">
                 <p class="text-center">
-                    {{ __("Are you sure you want to delete the {$resourceName}?") }}
+                    {{ __("Êtes vous sure de supprimer {$resourceName}?") }}
                     <br/>
-                    {{ __('This action cannot be reverted!') }}
+                    {{ __('Cette action ne peut être annulé!') }}
                 </p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">{{ __('Close') }}</button>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">{{ __('Fermer') }}</button>
                 <form method="POST" action="{{ route("{$route}", $resourceId) }}">
                     @csrf
                     @method('DELETE')

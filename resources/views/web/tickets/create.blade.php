@@ -1,5 +1,5 @@
 @extends('layouts.app', [
-    'title' => __('Create Ticket'),
+    'title' => __('Créer un ticket'),
     'columnSize' => 'col-lg-8',
 ])
 
@@ -13,7 +13,7 @@
 
         <hr/>
 
-        <button type="submit" class="btn btn-primary btn-block">{{ __('Submit') }}</button>
+        <button type="submit" class="btn btn-primary btn-block">{{ __('Envoyer') }}</button>
     </form>
 @endsection
 

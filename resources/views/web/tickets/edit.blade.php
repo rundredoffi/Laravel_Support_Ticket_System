@@ -1,5 +1,5 @@
 @extends('layouts.app', [
-    'title' => __('Edit Ticket') . ' - ' . $ticket->id,
+    'title' => __('Modifier ticket') . ' - ' . $ticket->id,
     'columnSize' => 'col-lg-8',
 ])
 
@@ -14,6 +14,6 @@
 
         <hr/>
 
-        <button type="submit" class="btn btn-primary btn-block">{{ __('Save') }}</button>
+        <button type="submit" class="btn btn-primary btn-block">{{ __('Sauvegarder') }}</button>
     </form>
 @endsection

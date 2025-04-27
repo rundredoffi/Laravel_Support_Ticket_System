@@ -7,9 +7,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="">
     <meta name="author" content="FabiDev">
-    <title>@yield('title') | {{ config('app.name', 'Laravel Support Ticket System') }}</title>
-    @vite('resources/css/app.css')
+    <title>@yield('title') | {{ config('app.name', 'TrackIT Support System') }}</title>
+    @vite('resources/sass/app.scss')
     <link href="{{ asset('css/fontawsome-free-all.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/s.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 </head>
 <body class="bg-gradient-primary">

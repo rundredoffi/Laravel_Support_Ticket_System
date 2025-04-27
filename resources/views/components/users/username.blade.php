@@ -10,5 +10,5 @@
         <x-users.role-badge :user="$user"/>
     @endif
 @else
-    <em>{{ __('Not specified') }}</em>
+    <em>{{ __('Non spécifié') }}</em>
 @endif

@@ -1,14 +1,14 @@
-@extends('layouts.app', ['title' => __('Users')])
+@extends('layouts.app', ['title' => __('Utilisateurs')])
 
 @section('content')
     <table class="table table-bordered text-center">
         <thead class="thead-light">
             <tr>
                 <th>{{ __('ID') }}</th>
-                <th>{{ __('Full Name') }}</th>
-                <th>{{ __('Joined at') }}</th>
+                <th>{{ __('Nom complet') }}</th>
+                <th>{{ __('Rejoins le') }}</th>
                 <th>{{ __('Email') }}</th>
-                <th>{{ __('Role') }}</th>
+                <th>{{ __('Rôle') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -33,7 +33,7 @@
                     </td>
                 </tr>
             @empty
-                <td colspan="5">{{ __('No users have been found.') }}</td>
+                <td colspan="5">{{ __('Aucun utilisateur trouvé.') }}</td>
             @endforelse
         </tbody>
     </table>

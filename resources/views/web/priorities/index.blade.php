@@ -1,11 +1,11 @@
-@extends('layouts.app', ['title' => __('Priorities')])
+@extends('layouts.app', ['title' => __('Priorités')])
 
 @section('content')
     <x-errors/>
 
     @can ('create', \App\Models\Priority::class)
         <a href="{{ route('priorities.create') }}" class="btn btn-primary mb-3">
-            {{ __('Create a priority') }}
+            {{ __('Créer une priorité') }}
         </a>
     @endcan
 
@@ -13,8 +13,8 @@
         <thead class="thead-light">
             <tr>
                 <th>{{ __('ID') }}</th>
-                <th>{{ __('Name') }}</th>
-                <th>{{ __('Created on') }}</th>
+                <th>{{ __('Nom') }}</th>
+                <th>{{ __('Créée') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -38,7 +38,7 @@
                 </tr>
             @empty
                 <td colspan="3">
-                    {{ __('No priorities have been created yet.') }}
+                    {{ __('Aucune priorité existante') }}
                 </td>
             @endforelse
         </tbody>

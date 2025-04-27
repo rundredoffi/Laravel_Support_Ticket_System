@@ -16,9 +16,9 @@ class EmailVerificationNotification extends VerifyEmail
     protected function buildMailMessage($url)
     {
         return (new MailMessage)
-            ->subject(__('Verify Your Account') . ' - ' . config('app.name', 'Laravel Support Ticket System'))
-            ->line(__('In order to fully enjoy our platform, please click the button below to verify your email address.'))
-            ->action(__('Verify Email Address'), $url)
-            ->line(__('If you did not create an account, no further action is required.'));
+        ->subject(__('Vérifiez votre compte') . ' - ' . config('app.name', 'TrackIT Support System'))
+        ->line(__('Afin de profiter pleinement de notre plateforme, veuillez cliquer sur le bouton ci-dessous pour vérifier votre adresse e-mail.'))
+        ->action(__('Vérifier l\'adresse e-mail'), $url)
+        ->line(__('Si vous n\'avez pas créé de compte, aucune autre action n\'est requise.'));
     }
 }

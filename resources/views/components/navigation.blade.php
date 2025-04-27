@@ -2,10 +2,10 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     {{-- Sidebar brand --}}
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('tickets.index') }}">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-headset"></i>
+        <div class="sidebar-brand-icon">
+            <img width="50px"src="{{ asset('images/track-it-white.png') }}" alt="">
         </div>
-        <div class="sidebar-brand-text mx-3">Support System</div>
+        <div class="sidebar-brand-text mx-3">Système de support</div>
     </a>
 
     {{-- Divider --}}
@@ -32,7 +32,7 @@
         <li class="nav-item {{ request()->routeIs('users*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('users.index') }}">
                 <i class="fas fa-fw fa-users"></i>
-                <span>{{ __('Users') }}</span>
+                <span>{{ __('Utilisateurs') }}</span>
             </a>
         </li>
     @endcan
@@ -41,7 +41,7 @@
         <li class="nav-item {{ request()->routeIs('categories*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('categories.index') }}">
                 <i class="fas fa-fw fa-rectangle-list"></i>
-                <span>{{ __('Categories') }}</span>
+                <span>{{ __('Catégories') }}</span>
             </a>
         </li>
     @endcan
@@ -59,7 +59,7 @@
         <li class="nav-item {{ request()->routeIs('priorities*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('priorities.index') }}">
                 <i class="fas fa-fw fa-turn-up"></i>
-                <span>{{ __('Priorities') }}</span>
+                <span>{{ __('Priorité') }}</span>
             </a>
         </li>
     @endcan
@@ -68,7 +68,7 @@
         <li class="nav-item {{ request()->routeIs('activities') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('activities') }}">
                 <i class="fas fa-fw fa-timeline"></i>
-                <span>{{ __('Activities') }}</span>
+                <span>{{ __('Logs') }}</span>
             </a>
         </li>
     @endcan

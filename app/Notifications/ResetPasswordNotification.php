@@ -47,12 +47,12 @@ class ResetPasswordNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject(__('Reset Password') . ' - ' . config('app.name', 'Laravel Support Ticket System'))
-            ->greeting(__('Hello ' . $notifiable->first_name . ','))
-            ->line(__('You are receiving this email because we received a password reset request for your account.'))
-            ->action(__('Reset Password'), $this->resetUrl($notifiable))
-            ->line(__('This password reset link will expire in :count minutes.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))
-            ->line(__('If you did not request a password reset, no further action is required.'));
+            ->subject(__('Réinitialiser le mot de passe') . ' - ' . config('app.name', 'TrackIT Support System'))
+            ->greeting(__('Bonjour ' . $notifiable->first_name . ','))
+            ->line(__('Vous recevez cet e-mail parce que nous avons reçu une demande de réinitialisation de mot de passe pour votre compte.'))
+            ->action(__('Réinitialiser le mot de passe'), $this->resetUrl($notifiable))
+            ->line(__('Ce lien de réinitialisation du mot de passe expirera dans :count minutes.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))
+            ->line(__('Si vous n\'avez pas demandé de réinitialisation de mot de passe, aucune autre action n\'est requise.'));
     }
 
     /**

@@ -18,12 +18,12 @@
             <ul class="list-inline d-sm-flex my-0">
                 <li class="list-inline-item ml-auto">
                     <a class="text-warning" href="{{ route('tickets.comments.edit', $comment) }}">
-                        <i class="fa fa-pencil"></i> {{ __('Edit') }}
+                        <i class="fa fa-pencil"></i> {{ __('Modifier') }}
                     </a>
                 </li>
             </ul>
         @endcan
     </div>
 @empty
-    <span>{{ __('No comments have been posted yet.') }}</span>
+    <span>{{ __('Pas de commentaire ajouté.') }}</span>
 @endforelse

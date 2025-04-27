@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="">
-    <meta name="author" content="FabiDev">
-    <title>{{ $title ?? __('Page') }} | {{ config('app.name', 'Laravel Support Ticket System') }}</title>
-    @vite('resources/css/app.css')
+    <meta name="author" content="Technova">
+    <title>{{ $title ?? __('Page') }} | {{ config('app.name', 'TrackIT Support System') }}</title>
+    @vite('resources/sass/app.scss')
     <link href="{{ asset('css/fontawesome-free-all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
     @yield('styles')
@@ -43,12 +43,12 @@
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="{{ route('users.edit', auth()->id()) }}">
                                     <i class="fas fa-user-pen fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    {{ __('Edit Profile') }}
+                                    {{ __('Modifier votre profile') }}
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    {{ __('Logout') }}
+                                    {{ __('Se déconnecter') }}
                                 </a>
                             </div>
                         </li>
@@ -77,7 +77,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>{{ __('Copyright') }} &copy; {{ config('app.name', 'Laravel Support Ticket System') }} {{ date('Y') }}</span>
+                        <span>{{ __('Copyright') }} &copy; {{ config('app.name', 'TrackIT Support System') }} {{ date('Y') }}</span>
                     </div>
                 </div>
             </footer>
@@ -98,20 +98,20 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">{{ __('Ready to Leave?') }}</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">{{ __('Prêt à partir ?') }}</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">{{ __('Select "Logout" below if you are ready to end your current session.') }}</div>
+                <div class="modal-body">{{ __('Sélectionnez « Déconnexion » ci-dessous si vous êtes prêt à terminer votre session actuelle.') }}</div>
                 <div class="modal-footer">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">{{ __('Cancel') }}</button>
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">{{ __('Annuler') }}</button>
                         <a href="{{ route('logout') }}" class="btn btn-primary"
                         onclick="event.preventDefault(); this.closest('form').submit();">
                             <i class="mr-2 fas fa-sign-out-alt"></i>
-                            {{ __('Log Out') }}
+                            {{ __('Déconnexion') }}
                         </a>
                     </form>
 

@@ -18,7 +18,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">
-                    {{ __('Close') }}
+                    {{ __('Fermer') }}
                 </button>
             </div>
         </div>

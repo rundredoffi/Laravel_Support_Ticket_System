@@ -11,13 +11,13 @@
         @method('PATCH')
 
         <div class="form-group mb-3">
-            <label for="first_name">{{ __('First name') }}</label>
+            <label for="first_name">{{ __('Prénom') }}</label>
             <input type="text" name="first_name" class="form-control" id="first_name"
                     value="{{ old('first_name', $user->first_name) }}" minlength="3" maxlength="60" required>
         </div>
 
         <div class="form-group mb-3">
-            <label for="last_name">{{ __('Last name') }}</label>
+            <label for="last_name">{{ __('Nom de famille') }}</label>
             <input type="text" name="last_name" class="form-control" id="last_name"
                     value="{{ old('last_name', $user->last_name) }}" minlength="3" maxlength="60" required>
         </div>
@@ -35,6 +35,6 @@
             </div>
         @endcan
 
-        <button type="submit" class="btn btn-primary btn-block">{{ __('Save') }}</button>
+        <button type="submit" class="btn btn-primary btn-block">{{ __('Sauvegarder') }}</button>
     </form>
 @endsection

@@ -7,7 +7,7 @@
 
     @can ('create', \App\Models\Label::class)
         <a href="{{ route('labels.create') }}" class="btn btn-primary mb-3">
-            {{ __('Create a label') }}
+            {{ __('Créer un label') }}
         </a>
     @endcan
 
@@ -15,8 +15,8 @@
         <thead class="thead-light">
             <tr>
                 <th>{{ __('ID') }}</th>
-                <th>{{ __('Name') }}</th>
-                <th>{{ __('Created on') }}</th>
+                <th>{{ __('Nom') }}</th>
+                <th>{{ __('Créé') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -40,7 +40,7 @@
                 </tr>
             @empty
                 <td colspan="3">
-                    {{ __('No labels have been created yet.') }}
+                    {{ __('Aucun label existant.') }}
                 </td>
             @endforelse
         </tbody>

@@ -46,11 +46,11 @@ class NewTicketNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject(__('New Ticket') . ' - ' . config('app.name', 'Laravel Support Ticket System'))
-            ->greeting(__('Hello ' . $notifiable->first_name . ','))
-            ->line(__('A new ticket has been submitted.'))
-            ->action(__('Go to the ticket'), route('tickets.show', $this->ticketId))
-            ->line(__('Make sure to assign an agent to it.'));
+            ->subject(__('Nouveau ticket') . ' - ' . config('app.name', 'TrackIT Support System'))
+            ->greeting(__('Bonjour ' . $notifiable->first_name . ','))
+            ->line(__('Un nouveau ticket a été soumis.'))
+            ->action(__('Voir le ticket'), route('tickets.show', $this->ticketId))
+            ->line(__('Assurez-vous d\'assigner un agent au ticket.'));
     }
 
     /**

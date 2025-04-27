@@ -4,14 +4,14 @@
 ])
 
 <div class="form-group mb-4">
-    <label for="title">{{ __('Title') }}</label>
+    <label for="title">{{ __('Titre') }}</label>
     <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $ticket->title ?? '') }}"
-            placeholder="{{ __('Brief description of the issue') }}" minlength="6" maxlength="100" autofocus required>
+            placeholder="{{ __('Bref description du problème') }}" minlength="6" maxlength="100" autofocus required>
 </div>
 
 <div class="form-group mb-4">
     <label for="description">{{ __('Description') }}</label>
-    <textarea class="form-control" rows="6" id="description" name="description" placeholder="{{ __('All details about the inquiry') }}"
+    <textarea class="form-control" rows="6" id="description" name="description" placeholder="{{ __('Décrivez votre problème de façon détaillé.') }}"
             minlength="30" maxlength="10000" required>{{ old('description', $ticket->description ?? '') }}</textarea>
 </div>
 
@@ -30,7 +30,7 @@
 </div>
 
 <div class="form-group mb-4">
-    <label>{{ __('Categories') }}</label>
+    <label>{{ __('Catégories') }}</label>
     <br/>
     @foreach ($categories as $category)
         <div class="form-check-inline">
@@ -44,7 +44,7 @@
 </div>
 
 <div class="form-group">
-    <label for="priority">{{ __('Priority') }}</label>
+    <label for="priority">{{ __('Priorité') }}</label>
     <select class="form-control" id="priority" name="priority_id" required>
         @foreach ($priorities as $priority)
             <option value="{{ $priority->id }}" @selected(old('priority_id', $ticket->priority_id ?? '') == $priority->id)>{{ $priority->name }}</option>
@@ -54,7 +54,7 @@
 
 @if ($ticket && $agents !== null)
     <div class="form-group">
-        <label for="agent_id">{{ __('Assigned Agent') }}</label>
+        <label for="agent_id">{{ __('Support assigné') }}</label>
         <select class="form-control" id="agent_id" name="agent_id">
             <option></option>
             @foreach ($agents as $agent)
@@ -65,18 +65,18 @@
 @endif
 
 @if (!$ticket)
-    <label>{{ __('Files') }} ({{ __('Not required') }})</label>
+    <label>{{ __('Files') }} ({{ __('Non requis') }})</label>
     <div class="form-group">
         <input type="file" class="filestyle" name="files[]"
                 data-dragdrop="true" data-text="{{ __('Browse') }}" data-badge="true" data-placeholder="{{ __('No files') }}" data-buttonBefore="true"
                 aria-describedby="multipleFilesInfo" accept=".jpeg, .jpg, .png, .pdf, .txt, .avi, .mpg, .mpeg, .mp4, .csv" multiple>
         <small id="multipleFilesInfo" class="form-text text-muted">
-            {{ __('Hold down the CTRL/CMD button to select multiple files.') }}
+            {{ __('Maintenez les bouttons CTRL/CMD pour sélectionner plusieurs fichiers.') }}
         </small>
         <small class="form-text text-muted">
-            <strong>{{ __('Accepted file types') }}:</strong> .jpeg, .jpg, .png, .pdf, .txt, .avi, .mpg, .mpeg, .mp4, .csv •
-            <strong>{{ __('Max file size') }}:</strong> 2 MB •
-            <strong>{{ __('Max files') }}:</strong> 5
+            <strong>{{ __('Fichiers accepté') }}:</strong> .jpeg, .jpg, .png, .pdf, .txt, .avi, .mpg, .mpeg, .mp4, .csv •
+            <strong>{{ __('Taille maximale') }}:</strong> 2 MB •
+            <strong>{{ __('Nombre maximale de fichier') }}:</strong> 5
         </small>
     </div>
 @endif

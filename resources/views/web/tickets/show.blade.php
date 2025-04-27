@@ -8,19 +8,19 @@
         <div class="col-lg-4">
             <dl class="dl-horizontal">
                 <dt>
-                    {{ __('Created by') }}
+                    {{ __('Créé par') }}
                 </dt>
                 <dd>
                     {{ $ticket->user->full_name }}
                 </dd>
                 <dt>
-                    {{ __('Created at') }}
+                    {{ __('Créé le ') }}
                 </dt>
                 <dd>
                     <x-datetime :date="$ticket->created_at" showDate/>
                 </dd>
                 <dt>
-                    {{ __('Last updated') }}
+                    {{ __('Dernière mise à jour') }}
                 </dt>
                 <dd>
                     <x-datetime :date="$ticket->updated_at" showDate/>
@@ -31,7 +31,7 @@
         <div class="col-lg-4">
             <dl class="dl-horizontal">
                 <dt>
-                    {{ __('Priority') }}
+                    {{ __('Priorité') }}
                 </dt>
                 <dd>
                     {{ $ticket->priority->name ?? __('Not specified') }}
@@ -43,7 +43,7 @@
                     <x-tickets.status :ticket="$ticket"/>
                 </dd>
                 <dt>
-                    {{ __('Agent') }}
+                    {{ __('Support') }}
                 </dt>
                 <dd>
                     <x-users.username :user="$ticket->agent"/>
@@ -64,7 +64,7 @@
                     @endforeach
                 </dd>
                 <dt>
-                    {{ __('Categories') }}
+                    {{ __('Catégorie') }}
                 </dt>
                 <dd>
                     @foreach ($ticket->categories as $category)
@@ -74,12 +74,12 @@
                     @endforeach
                 </dd>
                 <dt>
-                    {{ __('Attached files') }}
+                    {{ __('Fichiers joint') }}
                 </dt>
                 <dd>
                     @foreach ($ticket->files as $file)
                         <a href="{{ $file->public_path }}" target="blank">
-                            {{ __('File') }} #{{ $loop->iteration }}
+                            {{ __('Fichier') }} #{{ $loop->iteration }}
                         </a> |
                     @endforeach
                 </dd>
@@ -91,7 +91,7 @@
         <div class="btn-toolbar justify-content-center" role="toolbar">
             <div class="mr-1">
                 <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#ticketLog">
-                    {{ __('Log') }}
+                    {{ __('Logs du ticket') }}
                 </button>
             </div>
 
@@ -102,7 +102,7 @@
                         @method('PATCH')
 
                         <button type="submit" class="btn btn-info waves-effect waves-light">
-                            {{ __('Close') }}
+                            {{ __('Clôturer') }}
                         </button>
                     </form>
                 </div>
@@ -111,7 +111,7 @@
             @can ('update', $ticket)
                 <div class="mr-1">
                     <a href="{{ route('tickets.edit', $ticket) }}" class="btn btn-warning waves-effect waves-light">
-                        {{ __('Edit') }}
+                        {{ __('Modifier') }}
                     </a>
                 </div>
             @endcan
@@ -154,7 +154,7 @@
             <div class="text-right">
                 <button type="submit" class="btn btn-primary waves-effect waves-light mt-3">
                     <i class="fa fa-paper-plane mr-1"></i>
-                    {{ __('Submit') }}
+                    {{ __('Envoyer') }}
                 </button>
             </div>
         </form>
@@ -162,7 +162,7 @@
 
     @if ($ticket->isClosed())
         <div class="alert alert-danger text-center">
-            {{ __('The ticket is closed and thus, you cannot reply to it.') }}
+            {{ __('Le ticket est fermé et vous ne pouvez donc pas y répondre.') }}
         </div>
     @endif
 
@@ -180,7 +180,7 @@
 
     <hr class="my-4"/>
 
-    <x-modals.info modalId="ticketLog" header="{{ __('Ticket Log') }}">
+    <x-modals.info modalId="ticketLog" header="{{ __('Logs du ticket') }}">
         <x-activity-logs-table :logs="$ticket->activities"/>
     </x-modals.info>
 @endsection

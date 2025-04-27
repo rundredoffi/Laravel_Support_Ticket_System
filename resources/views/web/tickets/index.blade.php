@@ -10,49 +10,49 @@
                 <div class="input-group-text">{{ __('Status') }}</div>
             </div>
             <select class="form-control" id="status" name="status">
-                <option value="">{{ __('All') }}</option>
-                <option value="open" @selected(request()->status === 'open')>{{ __('Open') }}</option>
-                <option value="closed" @selected(request()->status === 'closed')>{{ __('Closed') }}</option>
+                <option value="">{{ __('Tous') }}</option>
+                <option value="open" @selected(request()->status === 'open')>{{ __('Ouvert') }}</option>
+                <option value="closed" @selected(request()->status === 'closed')>{{ __('Clôturé') }}</option>
             </select>
         </div>
 
-        <label class="sr-only" for="priority">{{ __('Priority') }}</label>
+        <label class="sr-only" for="priority">{{ __('Priorité') }}</label>
         <div class="input-group mb-2 mr-sm-2">
             <div class="input-group-prepend">
-                <div class="input-group-text">{{ __('Priority') }}</div>
+                <div class="input-group-text">{{ __('Priorité') }}</div>
             </div>
             <select class="form-control" id="priority" name="priority">
-                <option value="">{{ __('All') }}</option>
+                <option value="">{{ __('Tous') }}</option>
                 @foreach ($priorities as $priority)
                     <option value="{{ $priority->id }}" @selected(request()->priority == $priority->id)>{{ $priority->name }}</option>
                 @endforeach
             </select>
         </div>
 
-        <label class="sr-only" for="category">{{ __('Category') }}</label>
+        <label class="sr-only" for="category">{{ __('Catégorie') }}</label>
         <div class="input-group mb-2 mr-sm-2">
             <div class="input-group-prepend">
-                <div class="input-group-text">{{ __('Category') }}</div>
+                <div class="input-group-text">{{ __('Catégorie') }}</div>
             </div>
             <select class="form-control" id="category" name="category">
-                <option value="">{{ __('All') }}</option>
+                <option value="">{{ __('Tous') }}</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}" @selected(request()->category == $category->id)>{{ $category->name }}</option>
                 @endforeach
             </select>
         </div>
 
-        <button type="submit" class="btn btn-primary mb-2">{{ __('Go') }}</button>
+        <button type="submit" class="btn btn-primary mb-2">{{ __('Rechercher') }}</button>
     </form>
 
     <table class="table table-bordered text-center">
         <thead class="thead-light">
             <tr>
-                <th>{{ __('Title') }}</th>
+                <th>{{ __('Titre') }}</th>
                 <th>{{ __('Status') }}</th>
-                <th>{{ __('Priority') }}</th>
-                <th>{{ __('Agent') }}</th>
-                <th>{{ __('Updated on') }}</th>
+                <th>{{ __('Priorité') }}</th>
+                <th>{{ __('Support assigné') }}</th>
+                <th>{{ __('Dernière mise à jour') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -67,7 +67,7 @@
                         <x-tickets.status :ticket="$ticket"/>
                     </td>
                     <td>
-                        {{ $ticket->priority->name ?? __('Not specified') }}
+                        {{ $ticket->priority->name ?? __('Non specifiée') }}
                     </td>
                     <td>
                         <x-users.username :user="$ticket->agent"/>
@@ -78,14 +78,14 @@
                 </tr>
             @empty
                 <td colspan="5">
-                    {{ __('No tickets have been found.') }}
+                    {{ __('Aucun ticket trouver.') }}
                 </td>
             @endforelse
         </tbody>
     </table>
 
     <a href="{{ route('tickets.create') }}" class="btn btn-success">
-        {{ __('Create Ticket') }}
+        {{ __('Créer un ticket') }}
     </a>
 
     <x-pagination :collection="$tickets"/>

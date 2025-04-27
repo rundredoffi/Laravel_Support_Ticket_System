@@ -7,11 +7,11 @@
         <thead class="thead-light">
             <tr>
                 <th>{{ __('Timestamp UTC') }}</th>
-                <th>{{ __('Log name') }}</th>
+                <th>{{ __('Nom log') }}</th>
                 <th>{{ __('Description') }}</th>
-                <th>{{ __('Subject type') }}</th>
-                <th>{{ __('Subject ID') }}</th>
-                <th>{{ __('Caused by') }}</th>
+                <th>{{ __('Type sujet') }}</th>
+                <th>{{ __('ID sujet') }}</th>
+                <th>{{ __('Par') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -37,7 +37,7 @@
                     </td>
                 </tr>
             @empty
-                <td colspan="6">{{ __('No activities have been found.') }}</td>
+                <td colspan="6">{{ __('Aucun logs disponible.') }}</td>
             @endforelse
         </tbody>
     </table>

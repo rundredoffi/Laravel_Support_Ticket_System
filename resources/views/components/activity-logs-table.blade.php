@@ -12,7 +12,7 @@
                 <td>{{ __($log->description) }}</td>
             </tr>
         @empty
-            <td colspan="2">{{ __('This ticket has no activity logs.') }}</td>
+            <td colspan="2">{{ __('Impossible de retrouver le ticket') }}</td>
         @endforelse
     </tbody>
 </table>
